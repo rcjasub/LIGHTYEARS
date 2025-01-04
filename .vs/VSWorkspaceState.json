@@ -1,0 +1,22 @@
+{
+  "OutputFoldersPerTargetSystem": {
+    "Local Machine": [
+      "out\\build\\x64-Debug",
+      "out\\install\\x64-Debug"
+    ]
+  },
+  "ExpandedNodes": [
+    "",
+    "\\LightYearsEngine\\SRC",
+    "\\LightYearsEngine\\SRC\\GamePlay",
+    "\\LightYearsGame",
+    "\\LightYearsGame\\include",
+    "\\LightYearsGame\\include\\Player",
+    "\\LightYearsGame\\include\\Weapon",
+    "\\LightYearsGame\\SRC",
+    "\\LightYearsGame\\SRC\\Player",
+    "\\LightYearsGame\\SRC\\Weapon"
+  ],
+  "SelectedNode": "\\LightYearsGame\\CMakeLists.txt",
+  "PreviewInSolutionExplorer": false
+}

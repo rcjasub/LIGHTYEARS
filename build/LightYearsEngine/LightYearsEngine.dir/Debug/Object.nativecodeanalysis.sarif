@@ -1,0 +1,59 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.42.34435.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/lightyears/lightyearsengine/src/framework/object.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "f5b940fc670e59dff3233319a1ae736971b84a948033c52dbe9e84d40cf6cbee"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/lightyears/lightyearsengine/include/framework/object.h"
+          },
+          "hashes": {
+            "sha-256": "eae353a88b0e42a694f17fa965319f473e00cb5aebd970f56472ec795627f487"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/lightyears/lightyearsengine/include/framework/core.h"
+          },
+          "hashes": {
+            "sha-256": "5eee783191bd6ec18d394b1da3ef77832bf24a9aa337bc368679b45b8f8db537"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/lightyears/lightyearsengine/include/framework/delegate.h"
+          },
+          "hashes": {
+            "sha-256": "6de842093ac01960d9f3e1daff5d9e11e6d5bffb1f27fb57712d4f6032802a96"
+          }
+        }
+      ]
+    }
+  ]
+}
