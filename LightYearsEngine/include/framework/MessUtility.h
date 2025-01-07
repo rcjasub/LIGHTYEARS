@@ -23,17 +23,17 @@ namespace ly
 	}
 
 	template<typename T>
-	sf::Vector2<T>& Normalize(sf::Vector2<T>& vector)
+	sf::Vector2<T> Normalize(sf::Vector2<T>& vector)
 	{
 		float vectorLength = getVectorLength<T>(vector);
 
-		if (vectorLength == 0.f)  return sf::Vector2<T>{}; 
+		if (vectorLength == 0.f)  return sf::Vector2<T>{};
 
-		ScaleVector(vector, 1.0/vectorLength);
+		ScaleVector(vector, 1.0 / vectorLength);
 
 		return vector;
 	}
-	
+
 	sf::Color lerpColor(const sf::Color& a, const sf::Color& b, float alpha);
 
 	sf::Vector2f lerpVector(const sf::Vector2f& a, const sf::Vector2f& b, float alpha);
@@ -42,4 +42,4 @@ namespace ly
 
 	float RandomRange(float min, float max);
 	sf::Vector2f RandomUnitVector();
-} 
+}

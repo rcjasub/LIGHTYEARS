@@ -20,6 +20,12 @@ ${CMAKE_CURRENT_SOURCE_DIR}/SRC/Weapon/FrontalWiper.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/include/Player/PlayerSpaceShip.h
 ${CMAKE_CURRENT_SOURCE_DIR}/SRC/Player/PlayerSpaceShip.cpp
 
+${CMAKE_CURRENT_SOURCE_DIR}/include/Player/Player.h
+${CMAKE_CURRENT_SOURCE_DIR}/SRC/Player/Player.cpp
+
+${CMAKE_CURRENT_SOURCE_DIR}/include/Player/PlayerManager.h
+${CMAKE_CURRENT_SOURCE_DIR}/SRC/Player/PlayerManager.cpp
+
 ${CMAKE_CURRENT_SOURCE_DIR}/include/Player/Reward.h
 ${CMAKE_CURRENT_SOURCE_DIR}/SRC/Player/Reward.cpp
 

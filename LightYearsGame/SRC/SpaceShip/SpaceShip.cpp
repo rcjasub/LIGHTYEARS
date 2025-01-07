@@ -79,12 +79,13 @@ namespace ly {
 
 	void SpaceShip::Blow()
 	{
-		/*Explosion* exp = new Explosion();
+		Explosion* exp = new Explosion();
 		exp->SpawnExplosion(GetWorld(), GetActorLocation());
 		Destroy();
-		delete exp;*/
 		Blew();
 		Destroy();
+
+		delete exp;
 	}
 
 	void SpaceShip::Blew()

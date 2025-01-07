@@ -1,0 +1,21 @@
+# ninja log v6
+3	49	7579565466255305	box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-mkdir	c4bb62e438bab5e0
+3	49	7579565466255305	C:/LIGHTYEARS/out/build/x64-Debug/_deps/box2d-subbuild/box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-mkdir	c4bb62e438bab5e0
+49	1942	7579565485189147	box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-download	4141b26487950d69
+49	1942	7579565485189147	C:/LIGHTYEARS/out/build/x64-Debug/_deps/box2d-subbuild/box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-download	4141b26487950d69
+1942	2035	7579565485229155	box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-update	bce2ebdee67992b8
+1942	2035	7579565485229155	C:/LIGHTYEARS/out/build/x64-Debug/_deps/box2d-subbuild/box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-update	bce2ebdee67992b8
+2036	2081	7579565486584841	box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-patch	ba1fcf2a57f00ffd
+2036	2081	7579565486584841	C:/LIGHTYEARS/out/build/x64-Debug/_deps/box2d-subbuild/box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-patch	ba1fcf2a57f00ffd
+2081	2122	7579565486994887	box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-configure	c219b859d4def82c
+2081	2122	7579565486994887	C:/LIGHTYEARS/out/build/x64-Debug/_deps/box2d-subbuild/box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-configure	c219b859d4def82c
+2122	2163	7579565487394876	box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-build	a70b856d2e574ee0
+2122	2163	7579565487394876	C:/LIGHTYEARS/out/build/x64-Debug/_deps/box2d-subbuild/box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-build	a70b856d2e574ee0
+2163	2203	7579565487804883	box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-install	afe729cde393e0a5
+2163	2203	7579565487804883	C:/LIGHTYEARS/out/build/x64-Debug/_deps/box2d-subbuild/box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-install	afe729cde393e0a5
+2204	2245	7579565488214894	box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-test	2affd682dbeadd39
+2204	2245	7579565488214894	C:/LIGHTYEARS/out/build/x64-Debug/_deps/box2d-subbuild/box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-test	2affd682dbeadd39
+2245	2301	7579565488784886	CMakeFiles/box2d-populate-complete	82c763e0d85514b1
+2245	2301	7579565488784886	box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-done	82c763e0d85514b1
+2245	2301	7579565488784886	C:/LIGHTYEARS/out/build/x64-Debug/_deps/box2d-subbuild/CMakeFiles/box2d-populate-complete	82c763e0d85514b1
+2245	2301	7579565488784886	C:/LIGHTYEARS/out/build/x64-Debug/_deps/box2d-subbuild/box2d-populate-prefix/src/box2d-populate-stamp/box2d-populate-done	82c763e0d85514b1

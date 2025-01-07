@@ -34,25 +34,21 @@
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
-    <UseDebugLibraries>true</UseDebugLibraries>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
-    <UseDebugLibraries>false</UseDebugLibraries>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
-    <UseDebugLibraries>false</UseDebugLibraries>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
-    <UseDebugLibraries>false</UseDebugLibraries>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -426,6 +422,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\LIGHTYEARS\LightYearsGame\SRC\Weapon\FrontalWiper.cpp" />
     <ClInclude Include="C:\LIGHTYEARS\LightYearsGame\include\Player\PlayerSpaceShip.h" />
     <ClCompile Include="C:\LIGHTYEARS\LightYearsGame\SRC\Player\PlayerSpaceShip.cpp" />
+    <ClInclude Include="C:\LIGHTYEARS\LightYearsGame\include\Player\Player.h" />
+    <ClCompile Include="C:\LIGHTYEARS\LightYearsGame\SRC\Player\Player.cpp" />
+    <ClInclude Include="C:\LIGHTYEARS\LightYearsGame\include\Player\PlayerManager.h" />
+    <ClCompile Include="C:\LIGHTYEARS\LightYearsGame\SRC\Player\PlayerManager.cpp" />
     <ClInclude Include="C:\LIGHTYEARS\LightYearsGame\include\Player\Reward.h" />
     <ClCompile Include="C:\LIGHTYEARS\LightYearsGame\SRC\Player\Reward.cpp" />
     <ClInclude Include="C:\LIGHTYEARS\LightYearsGame\include\SpaceShip\SpaceShip.h" />

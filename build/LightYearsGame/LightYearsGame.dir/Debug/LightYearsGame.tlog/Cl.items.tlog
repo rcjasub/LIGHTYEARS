@@ -5,6 +5,8 @@ C:\LIGHTYEARS\LightYearsGame\SRC\Weapon\BulletShooter.cpp;C:\LIGHTYEARS\build\Li
 C:\LIGHTYEARS\LightYearsGame\SRC\Weapon\ThreeWayShooter.cpp;C:\LIGHTYEARS\build\LightYearsGame\LightYearsGame.dir\Debug\ThreeWayShooter.obj
 C:\LIGHTYEARS\LightYearsGame\SRC\Weapon\FrontalWiper.cpp;C:\LIGHTYEARS\build\LightYearsGame\LightYearsGame.dir\Debug\FrontalWiper.obj
 C:\LIGHTYEARS\LightYearsGame\SRC\Player\PlayerSpaceShip.cpp;C:\LIGHTYEARS\build\LightYearsGame\LightYearsGame.dir\Debug\PlayerSpaceShip.obj
+C:\LIGHTYEARS\LightYearsGame\SRC\Player\Player.cpp;C:\LIGHTYEARS\build\LightYearsGame\LightYearsGame.dir\Debug\Player.obj
+C:\LIGHTYEARS\LightYearsGame\SRC\Player\PlayerManager.cpp;C:\LIGHTYEARS\build\LightYearsGame\LightYearsGame.dir\Debug\PlayerManager.obj
 C:\LIGHTYEARS\LightYearsGame\SRC\Player\Reward.cpp;C:\LIGHTYEARS\build\LightYearsGame\LightYearsGame.dir\Debug\Reward.obj
 C:\LIGHTYEARS\LightYearsGame\SRC\SpaceShip\SpaceShip.cpp;C:\LIGHTYEARS\build\LightYearsGame\LightYearsGame.dir\Debug\SpaceShip.obj
 C:\LIGHTYEARS\LightYearsGame\SRC\GamePlay\HealthComponent.cpp;C:\LIGHTYEARS\build\LightYearsGame\LightYearsGame.dir\Debug\HealthComponent.obj

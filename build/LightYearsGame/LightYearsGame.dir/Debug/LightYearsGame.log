@@ -1,2 +1,4 @@
-﻿  GameLevel1.cpp
+﻿  PlayerManager.cpp
+  UFOStage.cpp
+  Generating Code...
   LightYearsGame.vcxproj -> C:\LIGHTYEARS\build\LightYearsGame\Debug\LightYearsGame.exe

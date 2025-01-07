@@ -7,15 +7,14 @@
   },
   "ExpandedNodes": [
     "",
-    "\\LightYearsEngine\\SRC",
-    "\\LightYearsEngine\\SRC\\GamePlay",
+    "\\build",
+    "\\LightYearsEngine",
     "\\LightYearsGame",
+    "\\LightYearsGame\\CMakeFiles\\3.30.3",
+    "\\LightYearsGame\\CMakeFiles\\3.30.3\\CompilerIdC",
     "\\LightYearsGame\\include",
-    "\\LightYearsGame\\include\\Player",
-    "\\LightYearsGame\\include\\Weapon",
     "\\LightYearsGame\\SRC",
-    "\\LightYearsGame\\SRC\\Player",
-    "\\LightYearsGame\\SRC\\Weapon"
+    "\\LightYearsGame\\SRC\\Player"
   ],
   "SelectedNode": "\\LightYearsGame\\CMakeLists.txt",
   "PreviewInSolutionExplorer": false

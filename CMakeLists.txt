@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.30.3)
+cmake_minimum_required(VERSION 3.29.5-msvc4)
 
 project(LightYears
 VERSION 1.0.0

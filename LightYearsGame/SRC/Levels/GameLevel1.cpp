@@ -11,22 +11,20 @@
 #include "Enemy/TwinBladeStage.h"
 #include "Enemy/HexagonStage.h"
 #include "Enemy/UFOStage.h"
+#include "Player/PlayerManager.h"
 
 namespace ly
 {
 	GameLevelOne::GameLevelOne(Application* owningApp)
 		:World{owningApp}
 	{
-		testPlayerSpaceShip = SpamActor<PlayerSpaceShip>();
-		testPlayerSpaceShip.lock()->SetActorLocation(sf::Vector2f(300.f, 490.f));
-		testPlayerSpaceShip.lock()->setActorRotation(0.f);
-
-		
+	
 	}
 
 	void GameLevelOne::BeginPlay()
 	{
-	
+		Player newPlayer = PlayerManager::Get().CreateNewPlayer();
+		newPlayer.SpawnSpaceShip(this);
 	}
 
 	void GameLevelOne::InitGameStages()
