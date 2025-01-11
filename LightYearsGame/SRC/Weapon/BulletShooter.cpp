@@ -1,6 +1,6 @@
 #include "Weapon/BulletShooter.h"
 #include "framework/core.h"
-#include "Weapon/Bullet.h"
+#include "Bullet.h"
 #include "framework/world.h"
 
 namespace ly

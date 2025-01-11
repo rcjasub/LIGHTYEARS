@@ -1,4 +1,4 @@
-#include "Weapon/ThreeWayShooter.h"
+#include "ThreeWayShooter.h"
 
 namespace ly
 {

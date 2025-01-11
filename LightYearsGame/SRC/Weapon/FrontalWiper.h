@@ -1,7 +1,7 @@
 #pragma once 
 
 #include <SFML/Graphics.hpp>
-#include "Weapon/BulletShooter.h"
+#include "BulletShooter.h"
 
 namespace ly
 {

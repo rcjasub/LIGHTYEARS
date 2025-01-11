@@ -1,4 +1,4 @@
-#include "Weapon/Weapon.h"
+#include "Weapon.h"
 
 namespace ly {
 	void Shooter::Shoot()

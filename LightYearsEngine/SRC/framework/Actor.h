@@ -1,5 +1,5 @@
 #pragma once
-#include <SFML/Graphics.hpp>  
+#include <SFML/Graphics.hpp>
 #include "framework/Object.h"
 #include "framework/core.h"
 

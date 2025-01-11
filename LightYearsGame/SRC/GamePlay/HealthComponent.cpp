@@ -1,4 +1,4 @@
-#include "GamePlay/HealthComponent.h"
+#include "HealthComponent.h"
 #include "framework/core.h"
 
 namespace ly

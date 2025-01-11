@@ -1,6 +1,6 @@
 #pragma once
 #include"framework/core.h"
-#include<SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 #include"framework/Object.h"
 
 

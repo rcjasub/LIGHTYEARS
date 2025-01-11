@@ -1,6 +1,6 @@
 #pragma once
-#include"Weapon/Weapon.h"
-#include<SFML/System.hpp>
+#include "Weapon.h"
+#include <SFML/System.hpp>
 
 namespace ly
 {

@@ -1,4 +1,4 @@
-#include "Weapon/Bullet.h"
+#include "Bullet.h"
 #include "framework/core.h"
 
 namespace ly

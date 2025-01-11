@@ -1,7 +1,7 @@
 #pragma once 
 
 #include "framework/core.h"
-#include "Player/Player.h"
+#include "Player.h"
 
 namespace ly
 {
