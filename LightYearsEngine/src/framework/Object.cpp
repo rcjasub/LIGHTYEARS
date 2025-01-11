@@ -1,32 +1,38 @@
-#include"framework/Object.h"
-#include"framework/core.h"
+#include "Object.hpp"
+#include "Core.hpp"
 
 namespace ly
 {
-	 Object::Object()
-		: mIsPendingDestroy{false}
-	{
-	}
+    uint64_t Object::smUniqueID_counter{0};
+    Object::Object(const std::string& name):
+        mIsPendingDestroy{false},
+        mUniqueID{GetNextAvailableID()},
+        mName{name +"_"+ std::to_string(GetUniqueId())}
+    {
+    }
+    Object::~Object()
+    {
+        LOG("%s Object Destroyed", mName.c_str());
+    }
 
-	Object::~Object()
-	{
-		LOG("Objected Destroy");
-	}
+    void Object::Destroy()
+    {
+        OnDestroy.Broadcast(this);
+        mIsPendingDestroy = true;
+    }
 
-	void Object::Destroy()
-	{
-		onDestroy.BroadCast(this);
-		mIsPendingDestroy = true;
-	}
+    weak<Object> Object::GetSelfWeakSRef()
+    {
+        return weak_from_this();
+    }
 
-	weak<Object> Object::GetWeakRef() 
-	{
-		return weak_from_this();
-	}
+    weak<const Object> Object::GetSelfWeakSRef() const
+    {
+        return weak_from_this();
+    }
 
-	weak<const Object> Object::GetWeakRef() const
-	{
-		return weak_from_this();
-	}
-
+    uint64_t Object::GetNextAvailableID()
+    {
+        return smUniqueID_counter++;
+    }
 }

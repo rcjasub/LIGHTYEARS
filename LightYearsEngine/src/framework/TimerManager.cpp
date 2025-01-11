@@ -1,108 +1,100 @@
 
-#include"framework/TimerManager.h"
+
+#include "TimerManager.hpp"
 
 namespace ly
 {
-	unsigned int TimerHandle::timerKeyCounter = 0;
+    unique<TimerManager> TimerManager::instance{nullptr};
 
-	//class
+    unsigned int TimerManager::timerIndexCount{0};
 
-	unique<TimerManager> TimerManager::timeManger{ nullptr };
+    void TimerManager::UpdateTimer(const float deltaTime)
+    {
+        for(auto iter =  mTimers.begin(); iter != mTimers.end();)
+        {
+            if(iter->second.IsExpired())
+            {
+                iter = mTimers.erase(iter);
+            }
+            else
+            {
+                iter->second.TickTime(deltaTime);
+                ++iter;
+            }
+        }
 
-	void TimerManager::UpdateTimer(float deltaTime)
-	{
-		for (auto iter = mTimers.begin(); iter != mTimers.end();)
-		{
-			if (iter->second.Expired())
-			{
-				iter = mTimers.erase(iter);
-		    }
-			
-			else
-			{
-				iter->second.TickTime(deltaTime);
-				++iter;
-			}
-		}
-	}
+    }
 
-	void TimerManager::ClearTimer(TimerHandle TimerHandle)
-	{
-		auto iter = mTimers.find(TimerHandle);
+    void TimerManager::ClearTimer(const TimerHandle timerHandle)
+    {
+        if(const auto searchResult{mTimers.find(timerHandle)}; searchResult != mTimers.end())
+        {
+            searchResult->second.SetExpired();
+        }
+        else
+        {
+            LOG("Timer %d Not Found!!!", timerHandle.GetTimerKey());
+        }
+    }
 
-		if (iter != mTimers.end())
-		{
-			iter->second.SetExpired();
-		}
-	}
+    TimerManager::TimerManager() = default;
 
-	TimerManager::TimerManager() : mTimers{}
-	{}
+    unsigned int TimerHandle::sm_TimerID{0};
 
-	TimerManager& TimerManager::Get()
-	{
-		if (!timeManger)
-		{
-			timeManger = std::move(unique<TimerManager>(new TimerManager{}));
-		}
+    TimerHandle::TimerHandle():
+        mTimerKey(IncrementAndGetNextTimerKey())
+    {
+    }
 
-		return *timeManger;
-	}
+    Timer::Timer(const weak<Object>& weakRef, const std::function<void()>& callback, const float duration, const bool repeat):
+        mListener{weakRef, callback},
+        mDuration{duration},
+        mRepeat{repeat},
+        mTimerCounter{0.0f},
+        mIsExpired{false}
+    {
+    }
 
-	//Struct
+    void Timer::TickTime(const float deltaTime)
+    {
+        if(IsExpired())
+        {
+            return;
+        }
 
-	Timer::Timer(weak<Object> weakRef, std::function<void()> callback, float duration, bool repeat)
-		:mlistener{ weakRef, callback },
-		mDuration{ duration },
-		mRepeat{ repeat },
-		mTimerCounter{ 0.f },
-		mIsExpired{ false }
+        mTimerCounter += deltaTime;
+        if(mTimerCounter >= mDuration)
+        {
+            mListener.second();
 
-	{
-	}
+            if(mRepeat)
+            {
+                mTimerCounter = 0.0f;
+            }
+            else
+            {
+                SetExpired();
+            }
+        }
+    }
 
-	void Timer::TickTime(float deltaTime)
-	{
-		if (Expired())
-		{
-			return;
-		}
+    bool Timer::IsExpired() const
+    {
+        return mIsExpired || mListener.first.expired() || mListener.first.lock()->IsPendingDestroy();
+    }
 
-		mTimerCounter += deltaTime;
-		if (mTimerCounter >= mDuration)
-		{
-			mlistener.second();
+    void Timer::SetExpired()
+    {
+        mIsExpired = true;
+    }
 
-			if (mRepeat)
-			{
-				mTimerCounter = 0.f;
-			}
-			else
-			{
-				SetExpired();
-			}
-		}
-	}
-
-	bool Timer::Expired() const
-	{
-		return mIsExpired || mlistener.first.expired() || mlistener.first.lock()->IsPendingDestroy();
-	}
-
-	void Timer::SetExpired()
-	{
-		mIsExpired = true;
-	}
-
-	//struct
-
-	TimerHandle::TimerHandle()
-		:mTimerKey{GetNextTimerKey()}
-	{
-	}
-
-	bool operator==(const TimerHandle& lhs, const TimerHandle& rhs)
-	{
-		return lhs.GetTimerKey() == rhs.GetTimerKey();
-	}
+    TimerManager& TimerManager::Get()
+    {
+        if(!instance)
+        {
+            // instance = std::make_unique<TimerManager>();
+            instance = std::unique_ptr<TimerManager>(new TimerManager());
+        }
+        return *instance.get();
+    }
 }

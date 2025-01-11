@@ -1,107 +1,119 @@
-cmake_minimum_required(VERSION 3.27.7)
-
-project(LightYears
-		VERSION 1.0.0
-		LANGUAGES C CXX
-)
-
-set(CMAKE_CXX_STANDARD          17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS       OFF)
-
-
 add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
-${CMAKE_CURRENT_SOURCE_DIR}/src/GameFramework/gameApplication.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/GameFramework/gameApplication.cpp
+    src/gameFramework/GameApplication.hpp
+    src/gameFramework/GameApplication.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/Weapon.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/Weapon.cpp
+    src/spaceship/Spaceship.hpp
+    src/spaceship/Spaceship.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/Bullet.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/Bullet.cpp
+    src/player/PlayerSpaceship.hpp
+    src/player/PlayerSpaceship.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/BulletShooter.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/BulletShooter.cpp
+    src/weapon/Shooter.hpp
+    src/weapon/Shooter.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/ThreeWayShooter.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/ThreeWayShooter.cpp
+    src/weapon/BulletShooter.hpp
+    src/weapon/BulletShooter.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/FrontalWiper.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/FrontalWiper.cpp
+    src/weapon/Bullet.hpp
+    src/weapon/Bullet.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Player/PlayerSpaceShip.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Player/PlayerSpaceShip.cpp
+	src/gameplay/HealthComponent.cpp
+	src/gameplay/HealthComponent.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Player/Player.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Player/Player.cpp
+	src/vfx/Explosion.cpp
+	src/vfx/Explosion.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Player/PlayerManager.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Player/PlayerManager.cpp
+	src/enemy/EnemySpaceship.cpp
+	src/enemy/EnemySpaceship.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Player/Reward.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Player/Reward.cpp
+	src/enemy/Vanguard.cpp
+	src/enemy/Vanguard.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/SpaceShip/SpaceShip.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/SpaceShip/SpaceShip.cpp
+	src/level/GameLevelOne.cpp
+	src/level/GameLevelOne.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/HealthComponent.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/HealthComponent.cpp
+	src/stage/VanguardStage.cpp
+	src/stage/VanguardStage.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Explosion.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Explosion.cpp
+	src/enemy/TwinBlade.cpp
+	src/enemy/TwinBlade.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Explosion.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Explosion.cpp
+	src/stage/TwinBladeStage.cpp
+	src/stage/TwinBladeStage.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/EnemySpaceShip.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/EnemySpaceShip.cpp
+	src/enemy/Octagon.cpp
+	src/enemy/Octagon.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/Vanguard.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/Vanguard.cpp
+	src/stage/OctagonStage.cpp
+	src/stage/OctagonStage.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Levels/GameLevel1.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Levels/GameLevel1.cpp
+	src/enemy/UFO.cpp
+	src/enemy/UFO.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/VanguardStage.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/VanguardStage.cpp
+	src/stage/UfoStage.cpp
+	src/stage/UfoStage.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/TwinBlade.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/TwinBlade.cpp
+	src/weapon/ThreeWayShooter.cpp
+	src/weapon/ThreeWayShooter.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/TwinBladeStage.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/TwinBladeStage.cpp
+	src/weapon/MultiShooter.cpp
+	src/weapon/MultiShooter.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/Hexagon.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/Hexagon.cpp
+	src/weapon/FrontalWiper.cpp
+	src/weapon/FrontalWiper.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/HexagonStage.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/HexagonStage.cpp
+	src/player/Reward.cpp
+	src/player/Reward.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFO.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFO.cpp
+	src/player/Player.cpp
+	src/player/Player.hpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFOStage.h
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFOStage.cpp
+	src/player/PlayerManager.cpp
+	src/player/PlayerManager.hpp
 
+	src/widgets/GameplayHUD.cpp
+	src/widgets/GameplayHUD.hpp
+
+	src/level/MainMenuLevel.cpp
+	src/level/MainMenuLevel.hpp
+
+	src/widgets/MainMenuHUD.cpp
+	src/widgets/MainMenuHUD.hpp
+
+	src/stage/ChaosStage.cpp
+	src/stage/ChaosStage.hpp
+
+	src/enemy/Boss.cpp
+	src/enemy/Boss.hpp
+
+	src/enemy/BossStage.cpp
+	src/enemy/BossStage.hpp
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/src
-    ${CMAKE_CURRENT_SOURCE_DIR}/include
-
+	src/
+	src/enemy
+	src/gameFramework
+	src/gameplay
+	src/level
+	src/spaceship
+	src/player
+	src/stage
+	src/vfx
+	src/weapon
+	src/widgets
 )
 
 target_link_libraries(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC ${LIGHT_YEARS_ENGINE_TARGET_NAME})
 
 function(CopyLibDirToTarget LIB_NAME TARGET_NAME)
-add_custom_command(  
-	TARGET ${TARGET_NAME}
+	add_custom_command(TARGET ${TARGET_NAME}
 	POST_BUILD
 	COMMAND
 	${CMAKE_COMMAND} -E copy_directory
 	$<TARGET_FILE_DIR:${LIB_NAME}>
 	$<TARGET_FILE_DIR:${TARGET_NAME}>
-)
+	)
 endfunction()
 
 CopyLibDirToTarget(${LIGHT_YEARS_ENGINE_TARGET_NAME} ${LIGHT_YEARS_GAME_TARGET_NAME})
@@ -110,9 +122,9 @@ set(RESOURCE_FOLDER_NAME "assets")
 set(RESOURCE_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/${RESOURCE_FOLDER_NAME}")
 
 add_custom_command(
-	TARGET ${LIGHT_YEARS_GAME_TARGET_NAME} 
+	TARGET ${LIGHT_YEARS_GAME_TARGET_NAME}
 	POST_BUILD
-	COMMAND 
+	COMMAND
 	${CMAKE_COMMAND} -E copy_directory
 	${RESOURCE_SRC_DIR}
 	$<TARGET_FILE_DIR:${LIGHT_YEARS_GAME_TARGET_NAME}>/${RESOURCE_FOLDER_NAME}

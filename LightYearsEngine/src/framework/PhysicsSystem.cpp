@@ -1,140 +1,140 @@
+
+#include "PhysicsSystem.hpp"
+#include "Actor.hpp"
+#include "MathUtility.hpp"
 #include <box2d/b2_body.h>
-#include <box2d/b2_contact.h>
 #include <box2d/b2_polygon_shape.h>
 #include <box2d/b2_fixture.h>
+#include <box2d/b2_contact.h>
 
-#include "framework/Actor.h"
-#include "framework/PhysicsSystem.h"
-#include "framework/MessUtility.h"
-#include "framework/core.h"
+namespace ly
+{
+    unique<PhysicsSystem> PhysicsSystem::s_mPhysicsSystem{nullptr};
 
+    void PhysicsContactListener::BeginContact(b2Contact *contact)
+    {
+        // LOG("Contact begin");
+        const auto ActorA = reinterpret_cast<Actor*>(contact->GetFixtureA()->GetBody()->GetUserData().pointer);
+        const auto ActorB = reinterpret_cast<Actor*>(contact->GetFixtureB()->GetBody()->GetUserData().pointer);
 
-namespace ly {
+        if(ActorA && !ActorA->IsPendingDestroy())
+        {
+            ActorA->OnActorBeginOverlap(ActorB);
+        }
 
-	unique<PhysicsSystem> PhysicsSystem::physicsSystem{ nullptr };
+        if(ActorB && !ActorB->IsPendingDestroy())
+        {
+            ActorB->OnActorBeginOverlap(ActorA);
+        }
+    }
 
-	PhysicsSystem& PhysicsSystem::Get()
-	{
-		if (!physicsSystem)
-		{
-			physicsSystem = std::move(unique<PhysicsSystem> { new PhysicsSystem });
-		}
+    void PhysicsContactListener::EndContact(b2Contact *contact)
+    {
+        // LOG("Contact end");
+        Actor* ActorA{nullptr};
+        Actor* ActorB{nullptr};
 
-		return *physicsSystem;
-	}
+        if(contact->GetFixtureA() && contact->GetFixtureA()->GetBody())
+        {
+            ActorA = reinterpret_cast<Actor*>(contact->GetFixtureA()->GetBody()->GetUserData().pointer);
+        }
 
-	void PhysicsSystem::Step(float deltaTime)
-	{
-		ProcessPendingRemoveListener();
-		mPhysicsWorld.Step(deltaTime, mVelocityIterations, mPositionIterations);
-	}
+        if(contact->GetFixtureB() && contact->GetFixtureB()->GetBody())
+        {
+            ActorB = reinterpret_cast<Actor*>(contact->GetFixtureB()->GetBody()->GetUserData().pointer);
+        }
 
-	b2Body* PhysicsSystem::addListener(Actor* listener)
-	{
-		if (listener->IsPendingDestroy())  return nullptr;
+        if(ActorA && !ActorA->IsPendingDestroy())
+        {
+            ActorA->OnActorEndOverlap(ActorB);
+        }
 
-		b2BodyDef bodyDef;
-		bodyDef.type = b2_dynamicBody;
+        if(ActorB && !ActorB->IsPendingDestroy())
+        {
+            ActorB->OnActorEndOverlap(ActorA);
+        }
+    }
 
-		bodyDef.userData.pointer = reinterpret_cast<uintptr_t>(listener);
+    void PhysicsSystem::Cleanup()
+    {
+        s_mPhysicsSystem = std::move(unique<PhysicsSystem>{new PhysicsSystem});
+    }
 
-		bodyDef.position.Set(listener->GetActorLocation().x * GetPhysicsScale(), listener->GetActorLocation().y * GetPhysicsScale());
-		bodyDef.angle = DegreesToRadiant(listener->GetActorRotation());
+    PhysicsSystem::PhysicsSystem():
+        mPhysicsWorld{b2Vec2{0.0f,0.0f}},
+        mPhysicsScale{0.01f},
+        mVelocityIterations{8},
+        mPositionIterations{3},
+        mContactListener{},
+        mPendingRemoveListener{}
+    {
+        mPhysicsWorld.SetContactListener(&mContactListener);
+        mPhysicsWorld.SetAllowSleeping(false);
+    }
 
-		b2Body* body = mPhysicsWorld.CreateBody(&bodyDef);
+    void PhysicsSystem::ProcessPendingRemoveListener()
+    {
+        for(const auto listener : mPendingRemoveListener)
+        {
+            mPhysicsWorld.DestroyBody(listener);
+        }
+        mPendingRemoveListener.clear();
+    }
 
-		b2PolygonShape shape;
+    PhysicsSystem & PhysicsSystem::GetInstance()
+    {
+        if(!s_mPhysicsSystem)
+        {
+            // s_mPhysicsSystem = std::move(std::make_unique<PhysicsSystem>());
+            // Todo - enable singleton creation of class with private/protected constructor
+            s_mPhysicsSystem = std::move(unique<PhysicsSystem>{new PhysicsSystem});
+        }
 
-		auto bound = listener->GetActorGlobalBounds();
-		shape.SetAsBox(bound.width / 2.f * GetPhysicsScale(), bound.height / 2.f * GetPhysicsScale());
+        return *s_mPhysicsSystem;
+    }
 
-		b2FixtureDef fixtureDef;
-		fixtureDef.shape = &shape;
-		fixtureDef.density = 1.0f;
-		fixtureDef.friction = 0.3f;
-		fixtureDef.isSensor = true;
+    void PhysicsSystem::Step(const float deltaTime)
+    {
+        ProcessPendingRemoveListener();
+        mPhysicsWorld.Step(deltaTime, mVelocityIterations, mPositionIterations);
+    }
 
-		body->CreateFixture(&fixtureDef);
+    b2Body * PhysicsSystem::AddListener(Actor *listener)
+    {
+        if(listener)
+        {
+            if(listener->IsPendingDestroy()) return nullptr;
 
+            b2BodyDef bodyDef;
+            bodyDef.type = b2_dynamicBody;
 
-		return body;
-	}
+            bodyDef.userData.pointer = reinterpret_cast<uintptr_t>(listener);
 
-	void PhysicsSystem::removeListener(b2Body* bodyToRemove)
-	{
-		mPendingRemoveListener.insert(bodyToRemove);
-	}
+            bodyDef.position.Set(listener->GetActorLocation().GetX() * GetPhysicsScale(), listener->GetActorLocation().GetY() * GetPhysicsScale());
+            bodyDef.angle = MathUtility::DegreesToRadians(listener->GetActorRotation_rad());
 
-	void PhysicsSystem::CleanUp()
-	{
-		physicsSystem.reset(new PhysicsSystem());
-		/*physicsSystem = std::move(unique<PhysicsSystem> { new PhysicsSystem });*/
-	}
+            b2Body* body = mPhysicsWorld.CreateBody(&bodyDef);
 
-	PhysicsSystem::PhysicsSystem()
-		:mPhysicsWorld{ b2Vec2 {0.f, 0.f} },
-		mPhysicsScale{ 0.01f },
-		mVelocityIterations{ 4 },
-		mPositionIterations{ 2 },
-		mContactListener{},
-	    mPendingRemoveListener{}
-	{
-		mPhysicsWorld.SetContactListener(&mContactListener);
-		mPhysicsWorld.SetAllowSleeping(true);
-	}
+            b2PolygonShape shape;
+            const auto bound = listener->GetActorGlobalBounds();
+            shape.SetAsBox(bound.width/2.0f * GetPhysicsScale(), bound.height/2.0f * GetPhysicsScale());
 
-	void PhysicsSystem::ProcessPendingRemoveListener()
-	{
-        for (auto listener : mPendingRemoveListener)
-		{
-			mPhysicsWorld.DestroyBody(listener);
-		}
+            b2FixtureDef fixture;
+            fixture.shape = &shape;
+            fixture.density = 1.0f;
+            fixture.friction = 0.3f;
+            fixture.isSensor = true;
 
-		mPendingRemoveListener.clear();
-	}
+            body->CreateFixture(&fixture);
 
-	void PhysicsContactListener::BeginContact(b2Contact* contact)
-	{
-		Actor* ActorA = reinterpret_cast<Actor*>(contact->GetFixtureA()->GetBody()->GetUserData().pointer);
-		Actor* ActorB = reinterpret_cast<Actor*>(contact->GetFixtureB()->GetBody()->GetUserData().pointer);
+            return body;
+        }
 
-		if (ActorA && !ActorA->IsPendingDestroy())
-		{
-			ActorA->OnActorBeginOverlap(ActorB);
-		}
+        throw std::runtime_error("Could not add listener - Actor Null");
+    }
 
-		if (ActorB && !ActorB->IsPendingDestroy())
-		{
-			ActorB->OnActorBeginOverlap(ActorA);
-		}
-	}
-
-	void PhysicsContactListener::EndContact(b2Contact* contact)
-	{
-		Actor* ActorA = nullptr;
-		Actor* ActorB = nullptr;
-
-		if (contact->GetFixtureA() && contact->GetFixtureA()->GetBody())
-		{
-			ActorA = reinterpret_cast<Actor*>(contact->GetFixtureA()->GetBody()->GetUserData().pointer);
-		}
-
-
-		if (contact->GetFixtureB() && contact->GetFixtureB()->GetBody())
-		{
-			ActorB = reinterpret_cast<Actor*>(contact->GetFixtureB()->GetBody()->GetUserData().pointer);
-		}
-
-		if (ActorA && !ActorA->IsPendingDestroy())
-		{
-			ActorA->OnActorEndOverlap(ActorB);
-		}
-
-		if (ActorB && !ActorB->IsPendingDestroy())
-		{
-			ActorB->OnActorEndOverlap(ActorA);
-		}
-
-	}
+    void PhysicsSystem::RemoveListener(b2Body *bodyToRemove)
+    {
+        mPendingRemoveListener.insert(bodyToRemove);
+    }
 }
-
