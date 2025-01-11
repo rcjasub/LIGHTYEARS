@@ -1,0 +1,113 @@
+{
+    "version" : 6,
+    "cmakeMinimumRequired" : {
+        "major" : 3,
+        "minor" : 25,
+        "patch" : 0
+    },
+    "configurePresets" : [
+        {
+            "name" : "common",
+            "hidden" : true,
+            "description" : "Common Configurations",
+            "generator" : "Ninja",
+            "cacheVariables" : {
+                "CMAKE_BUILD_TYPE" : "Debug"
+            }
+        },
+        {
+            "name" : "common_sfml_box2d",
+            "hidden" : true,
+            "description" : "Common SFML and BOX2D",
+            "cacheVariables" : {
+                "SFML" : "ON",
+                "BOX2D" : "ON"
+            }
+        },
+        {
+            "name" : "common_sdl2_imgui_glfw",
+            "hidden" : true,
+            "description" : "Common SDL2 and BOX2D",
+            "cacheVariables" : {
+                "SDL2" : "ON",
+                "IMUGUI" : "ON",
+                "GLFW" : "ON"
+            }
+        },
+        {
+            "name" : "common_clion_docker",
+            "hidden" : true,
+            "description" : "Common Docker Configurations",
+            "vendor": {
+                "jetbrains.com/clion": {
+                    "toolchain": "Docker_game_dev"
+                }
+            }
+        },
+        {
+            "name" : "lightyears_sfml_box2d_debug",
+            "description" : "CONFIGURE for Lightyears game with SFML and BOX2d debug",
+            "inherits" : ["common", "common_sfml_box2d"],
+            "binaryDir" : "./Build_${hostSystemName}_debug/",
+            "cacheVariables" : {
+            }
+        },
+        {
+            "name" : "lightyears_sfml_box2d_release",
+            "description" : "CONFIGURE for Lightyears game with SFML and BOX2d release",
+            "inherits" : ["common", "common_sfml_box2d"],
+            "binaryDir" : "./Build_${hostSystemName}_release/",
+            "cacheVariables" : {
+                "CMAKE_BUILD_TYPE" : "Release"
+            }
+        },
+        {
+            "name" : "lightyears_sfml_box2d_debug_docker",
+            "description" : "CONFIGURE for Lightyears game with SFML and BOX2d debug in docker container",
+            "inherits" : ["common", "common_clion_docker", "common_sfml_box2d"],
+            "binaryDir" : "./Build_${hostSystemName}_debug_docker/",
+            "cacheVariables" : {
+            }
+        },
+        {
+            "name" : "lightyears_sfml_box2d_release_docker",
+            "description" : "CONFIGURE for Lightyears game with SFML and BOX2d release in docker container",
+            "inherits" : ["common", "common_clion_docker", "common_sfml_box2d"],
+            "binaryDir" : "./Build_${hostSystemName}_release_docker/",
+            "cacheVariables" : {
+                "CMAKE_BUILD_TYPE" : "Release"
+            }
+        },
+        {
+            "name" : "lightyears_sdl2_debug_docker",
+            "description" : "CONFIGURE for Lightyears game with SFML and BOX2d debug in docker container",
+            "inherits" : ["common", "common_clion_docker", "common_sdl2_imgui_glfw"],
+            "binaryDir" : "./Build_${hostSystemName}_sdl2_debug_docker/",
+            "cacheVariables" : {
+            }
+        },
+        {
+            "name" : "lightyears_sdl2_release_docker",
+            "description" : "CONFIGURE for Lightyears game with SFML and BOX2d release in docker container",
+            "inherits" : ["common", "common_clion_docker", "common_sdl2_imgui_glfw"],
+            "binaryDir" : "./Build_${hostSystemName}_sdl2_release_docker/",
+            "cacheVariables" : {
+                "CMAKE_BUILD_TYPE" : "Release"
+            }
+        }
+    ],
+    "buildPresets" : [
+        {
+            "name" : "lightyears_sfml_box2d_debug_docker",
+            "description" : "BUILD presets for Lightyears game with SFML and BOX2d debug in docker container",
+            "configurePreset": "lightyears_sfml_box2d_debug_docker",
+            "targets" : ["LightYearsGame"]
+        },
+        {
+            "name" : "lightyears_sfml_box2d_release_docker",
+            "description" : "BUILD presets for Lightyears game with SFML and BOX2d release in docker container",
+            "configurePreset": "lightyears_sfml_box2d_release_docker",
+            "targets" : ["LightYearsGame"]
+        }
+    ]
+}
