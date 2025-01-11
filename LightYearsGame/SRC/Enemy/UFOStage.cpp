@@ -2,6 +2,7 @@
 #include "framework/MessUtility.h"
 #include "framework/world.h"
 #include "Enemy/UFO.h"
+#include"Weapon/BulletShooter.h"
 
 namespace ly
 {

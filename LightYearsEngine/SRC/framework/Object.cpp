@@ -1,5 +1,5 @@
 #include"framework/Object.h"
-#include"framework/Core.h"
+#include"framework/core.h"
 
 namespace ly
 {

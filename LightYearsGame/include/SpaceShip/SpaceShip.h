@@ -3,7 +3,7 @@
 #include"framework/Actor.h"
 #include"framework/AssetsManager.h"
 #include"GamePlay/HealthComponent.h"
-
+#include"Weapon/Weapon.h"
 
 
 namespace ly

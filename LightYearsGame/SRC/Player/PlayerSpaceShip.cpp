@@ -1,7 +1,7 @@
 #include "Player/PlayerSpaceShip.h"
 #include <SFML/System.hpp>
 #include "framework/MessUtility.h"
-#include "weapon/BulletShooter.h"
+#include "Weapon/BulletShooter.h"
 #include "Weapon/ThreeWayShooter.h"
 #include "Weapon/FrontalWiper.h"
 

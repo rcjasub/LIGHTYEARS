@@ -1,5 +1,5 @@
 #include"Enemy/TwinBlade.h"
-#include"weapon/BulletShooter.h"
+#include"Weapon/BulletShooter.h"
 
 namespace ly 
 {
