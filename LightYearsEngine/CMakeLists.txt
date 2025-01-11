@@ -11,52 +11,53 @@ set(CMAKE_CXX_EXTENSIONS       OFF)
 
 # Add the engine's source files as a static library
 add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/PhysicsSystem.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/PhysicsSystem.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/PhysicsSystem.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/PhysicsSystem.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/application.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/application.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/application.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/application.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/MessUtility.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/MessUtility.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/MessUtility.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/MessUtility.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/AssetsManager.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/AssetsManager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/AssetsManager.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/AssetsManager.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/Object.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/Object.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Object.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Object.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/Actor.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/Actor.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Actor.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Actor.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/world.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/world.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/world.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/world.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/core.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/core.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/core.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/core.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/Delegate.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/Delegate.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Delegate.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Delegate.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/VFX/Particle.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/VFX/Particle.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Particle.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Particle.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/EntryPoint.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/EntryPoint.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/EntryPoint.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/EntryPoint.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/TimerManager.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/framework/TimerManager.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/TimerManager.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/TimerManager.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/GamePlay/GameStage.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/GamePlay/GameStage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/GameStage.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/GameStage.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/GamePlay/WaitStage.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC/GamePlay/WaitStage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/WaitStage.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/WaitStage.cpp
 )
 
 # Include directories for the engine target
 target_include_directories(${LIGHT_YEARS_ENGINE_TARGET_NAME} PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/SRC
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 # Fetch and link SFML libraries

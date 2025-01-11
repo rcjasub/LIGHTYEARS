@@ -264,7 +264,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/framework/PhysicsSystem.cpp",
+			"path" : "LightYearsEngine/src/framework/PhysicsSystem.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -275,7 +275,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/framework/application.cpp",
+			"path" : "LightYearsEngine/src/framework/application.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -286,7 +286,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/framework/MessUtility.cpp",
+			"path" : "LightYearsEngine/src/framework/MessUtility.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -297,7 +297,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/framework/AssetsManager.cpp",
+			"path" : "LightYearsEngine/src/framework/AssetsManager.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -308,7 +308,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/framework/Object.cpp",
+			"path" : "LightYearsEngine/src/framework/Object.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -319,7 +319,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/framework/Actor.cpp",
+			"path" : "LightYearsEngine/src/framework/Actor.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -330,7 +330,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/framework/world.cpp",
+			"path" : "LightYearsEngine/src/framework/world.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -341,7 +341,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/framework/core.cpp",
+			"path" : "LightYearsEngine/src/framework/core.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -352,7 +352,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/framework/Delegate.cpp",
+			"path" : "LightYearsEngine/src/framework/Delegate.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -363,7 +363,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/VFX/Particle.cpp",
+			"path" : "LightYearsEngine/src/VFX/Particle.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -374,7 +374,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/EntryPoint.cpp",
+			"path" : "LightYearsEngine/src/EntryPoint.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -385,7 +385,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/framework/TimerManager.cpp",
+			"path" : "LightYearsEngine/src/framework/TimerManager.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -396,7 +396,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/GamePlay/GameStage.cpp",
+			"path" : "LightYearsEngine/src/GamePlay/GameStage.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -407,7 +407,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "LightYearsEngine/SRC/GamePlay/WaitStage.cpp",
+			"path" : "LightYearsEngine/src/GamePlay/WaitStage.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

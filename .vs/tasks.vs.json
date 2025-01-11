@@ -3,7 +3,7 @@
   "tasks": [
     {
       "taskLabel": "task-Enemy",
-      "appliesTo": "LightYearsGame/SRC/Enemy/",
+      "appliesTo": "LightYearsGame/src/Enemy/",
       "type": "launch"
     }
   ]
