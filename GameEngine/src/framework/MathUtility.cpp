@@ -2,6 +2,8 @@
 #include "MathUtility.hpp"
 #include <random>
 
+#define M_PI 3.1415926535
+
 namespace ly
 {
     Vector2Df MathUtility::RotationToVector(const float rotation)

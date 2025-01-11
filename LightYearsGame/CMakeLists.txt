@@ -91,6 +91,7 @@ add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC
+	include/
 	src/
 	src/enemy
 	src/gameFramework
