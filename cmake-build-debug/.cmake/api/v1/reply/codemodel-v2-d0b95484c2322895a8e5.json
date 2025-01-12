@@ -1,0 +1,101 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27.7"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "GameEngine",
+					"jsonFile" : "directory-GameEngine-Debug-0f8e2101cd8f5f733254.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27.7"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "GameEngine",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "LightYearsGame",
+					"jsonFile" : "directory-LightYearsGame-Debug-35eee4e82c24d10ea1f5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27.7"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "LightYearsGame",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "LightYears",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "LightYearsEngine::@3f1430db303f85cff844",
+					"jsonFile" : "target-LightYearsEngine-Debug-61292d2478b242b73ec1.json",
+					"name" : "LightYearsEngine",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "LightYearsGame::@7f7105a02de846a586a2",
+					"jsonFile" : "target-LightYearsGame-Debug-05b5e4601c5812786902.json",
+					"name" : "LightYearsGame",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/lightyears_fix/cmake-build-debug",
+		"source" : "C:/lightyears_fix"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

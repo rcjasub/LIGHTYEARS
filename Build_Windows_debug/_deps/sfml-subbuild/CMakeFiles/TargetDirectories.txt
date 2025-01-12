@@ -1,0 +1,3 @@
+C:/lightyears_fix/Build_Windows_debug/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
+C:/lightyears_fix/Build_Windows_debug/_deps/sfml-subbuild/CMakeFiles/edit_cache.dir
+C:/lightyears_fix/Build_Windows_debug/_deps/sfml-subbuild/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,7 @@
+# ninja log v6
+25	69	7584229014821747	GameEngine/CMakeFiles/LightYearsEngine.dir/src/framework/Core.cpp.obj	649f646cd5dca833
+21	353	7584229014779454	GameEngine/CMakeFiles/LightYearsEngine.dir/src/framework/Delegate.cpp.obj	11f9f10ed0a927cc
+46	473	7584229015031973	GameEngine/CMakeFiles/LightYearsEngine.dir/src/gameplay/GameStage.cpp.obj	871e4696f961bd8b
+18	480	7584229014749449	GameEngine/CMakeFiles/LightYearsEngine.dir/src/framework/Object.cpp.obj	ebb01d5058543bd9
+42	513	7584229014991881	GameEngine/CMakeFiles/LightYearsEngine.dir/src/framework/TimerManager.cpp.obj	c125d1a730cff36d
+50	545	7584229015071978	GameEngine/CMakeFiles/LightYearsEngine.dir/src/gameplay/WaitStage.cpp.obj	27954e0c537c8d71

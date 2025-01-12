@@ -1,0 +1,8 @@
+C:/lightyears_fix/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/lightyears_fix/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/lightyears_fix/cmake-build-debug/GameEngine/CMakeFiles/LightYearsEngine.dir
+C:/lightyears_fix/cmake-build-debug/GameEngine/CMakeFiles/edit_cache.dir
+C:/lightyears_fix/cmake-build-debug/GameEngine/CMakeFiles/rebuild_cache.dir
+C:/lightyears_fix/cmake-build-debug/LightYearsGame/CMakeFiles/LightYearsGame.dir
+C:/lightyears_fix/cmake-build-debug/LightYearsGame/CMakeFiles/edit_cache.dir
+C:/lightyears_fix/cmake-build-debug/LightYearsGame/CMakeFiles/rebuild_cache.dir
