@@ -1,5 +1,5 @@
-#include"Enemy/Hexagon.h"
-#include"Weapon/BulletShooter.h"
+#include"Enemy/Hexagon.hpp"
+#include"Weapon/BulletShooter.hpp"
 
 namespace ly
 {

@@ -1,6 +1,6 @@
-#include "Player.h"
-#include "framework/world.h"
-#include "Player/PlayerSpaceShip.h"
+#include "Player.hpp"
+#include "framework/world.hpp"
+#include "Player/PlayerSpaceShip.hpp"
 
 namespace ly
 {

@@ -11,76 +11,76 @@ set(CMAKE_CXX_EXTENSIONS       OFF)
 
 
 add_executable(${LIGHT_YEARS_GAME_TARGET_NAME}
-${CMAKE_CURRENT_SOURCE_DIR}/src/GameFramework/gameApplication.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/GameFramework/gameApplication.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/GameFramework/gameApplication.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/Weapon.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/Weapon.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/Weapon.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/Bullet.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/Bullet.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/Bullet.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/BulletShooter.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/BulletShooter.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/BulletShooter.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/ThreeWayShooter.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/ThreeWayShooter.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/ThreeWayShooter.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/FrontalWiper.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/FrontalWiper.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Weapon/FrontalWiper.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Player/PlayerSpaceShip.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Player/PlayerSpaceShip.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Player/PlayerSpaceShip.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Player/Player.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Player/Player.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Player/Player.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Player/PlayerManager.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Player/PlayerManager.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Player/PlayerManager.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Player/Reward.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Player/Reward.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Player/Reward.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/SpaceShip/SpaceShip.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/SpaceShip/SpaceShip.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/SpaceShip/SpaceShip.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/HealthComponent.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/HealthComponent.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/HealthComponent.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Explosion.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Explosion.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Explosion.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Explosion.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Explosion.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Explosion.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/EnemySpaceShip.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/EnemySpaceShip.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/EnemySpaceShip.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/Vanguard.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/Vanguard.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/Vanguard.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Levels/GameLevel1.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Levels/GameLevel1.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Levels/GameLevel1.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/VanguardStage.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/VanguardStage.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/VanguardStage.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/TwinBlade.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/TwinBlade.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/TwinBlade.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/TwinBladeStage.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/TwinBladeStage.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/TwinBladeStage.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/Hexagon.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/Hexagon.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/Hexagon.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/HexagonStage.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/HexagonStage.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/HexagonStage.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFO.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFO.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFO.cpp
 
-${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFOStage.h
+${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFOStage.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFOStage.cpp
 
 )

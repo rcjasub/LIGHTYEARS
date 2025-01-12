@@ -3,10 +3,10 @@
 #include <box2d/b2_polygon_shape.h>
 #include <box2d/b2_fixture.h>
 
-#include "framework/Actor.h"
-#include "framework/PhysicsSystem.h"
-#include "framework/MessUtility.h"
-#include "framework/core.h"
+#include "framework/Actor.hpp"
+#include "framework/PhysicsSystem.hpp"
+#include "framework/MathUtility.hpp"
+#include "framework/core.hpp"
 
 
 namespace ly {

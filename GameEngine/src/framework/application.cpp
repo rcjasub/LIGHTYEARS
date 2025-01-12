@@ -1,9 +1,9 @@
-#include "framework/application.h"
-#include "framework/core.h"
-#include "framework/world.h"
-#include "framework/AssetsManager.h"
-#include "framework/PhysicsSystem.h"
-#include "framework/TimerManager.h"
+#include "framework/application.hpp"
+#include "framework/core.hpp"
+#include "framework/world.hpp"
+#include "framework/AssetsManager.hpp"
+#include "framework/PhysicsSystem.hpp"
+#include "framework/TimerManager.hpp"
 
 #include <chrono>
 #include <thread>

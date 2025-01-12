@@ -1,8 +1,8 @@
-#include "framework/world.h"
-#include "framework/core.h"
-#include "framework/Actor.h"
-#include "framework/application.h"
-#include "GamePlay/GameStage.h"
+#include "framework/world.hpp"
+#include "framework/core.hpp"
+#include "framework/Actor.hpp"
+#include "framework/application.hpp"
+#include "GamePlay/GameStage.hpp"
 
 namespace ly
 {

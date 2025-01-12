@@ -1,5 +1,5 @@
-#include "Enemy/UFO.h"
-#include "Weapon/BulletShooter.h"
+#include "Enemy/UFO.hpp"
+#include "Weapon/BulletShooter.hpp"
 
 namespace ly
 {

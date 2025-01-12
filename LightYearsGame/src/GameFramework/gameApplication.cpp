@@ -1,7 +1,7 @@
-#include "GameFramework/gameApplication.h"
-#include "Levels/GameLevel1.h"
-#include "config.h"
-#include "framework/AssetsManager.h"
+#include "GameFramework/gameApplication.hpp"
+#include "Levels/GameLevel1.hpp"
+#include "config.hpp"
+#include "framework/AssetsManager.hpp"
 
 ly::Application* GetApplication()
 {

@@ -1,5 +1,5 @@
-#include"GamePlay/GameStage.h"
-#include"framework/core.h"
+#include"GamePlay/GameStage.hpp"
+#include"framework/core.hpp"
 
 namespace ly
 {

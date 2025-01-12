@@ -1,5 +1,5 @@
-#include "GamePlay/WaitStage.h"
-#include "framework/TimerManager.h"
+#include "GamePlay/WaitStage.hpp"
+#include "framework/TimerManager.hpp"
 
 namespace ly
 {

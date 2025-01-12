@@ -1,8 +1,8 @@
-#include "Player/Reward.h"
-#include "Player/PlayerSpaceShip.h"
-#include "Weapon/ThreeWayShooter.h"
-#include "Weapon/FrontalWiper.h"
-#include "framework/world.h"
+#include "Player/Reward.hpp"
+#include "Player/PlayerSpaceShip.hpp"
+#include "Weapon/ThreeWayShooter.hpp"
+#include "Weapon/FrontalWiper.hpp"
+#include "framework/world.hpp"
 
 namespace ly
 {

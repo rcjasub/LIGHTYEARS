@@ -11,46 +11,46 @@ set(CMAKE_CXX_EXTENSIONS       OFF)
 
 # Add the engine's source files as a static library
 add_library(${LIGHT_YEARS_ENGINE_TARGET_NAME} STATIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/PhysicsSystem.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/PhysicsSystem.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/PhysicsSystem.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/application.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/application.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/application.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/MessUtility.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/MessUtility.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/MathUtility.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/MathUtility.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/AssetsManager.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/AssetsManager.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/AssetsManager.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Object.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Object.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Object.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Actor.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Actor.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Actor.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/world.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/world.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/world.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/core.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/core.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/core.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Delegate.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Delegate.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/Delegate.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Particle.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Particle.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/VFX/Particle.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/EntryPoint.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/EntryPoint.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/EntryPoint.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/TimerManager.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/TimerManager.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/framework/TimerManager.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/GameStage.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/GameStage.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/GameStage.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/WaitStage.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/WaitStage.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/GamePlay/WaitStage.cpp
 )
 

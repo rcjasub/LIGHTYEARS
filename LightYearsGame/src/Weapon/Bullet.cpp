@@ -1,5 +1,5 @@
-#include "Bullet.h"
-#include "framework/core.h"
+#include "Bullet.hpp"
+#include "framework/core.hpp"
 
 namespace ly
 {

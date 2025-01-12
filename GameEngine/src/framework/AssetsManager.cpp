@@ -1,5 +1,5 @@
-#include "framework/AssetsManager.h"
-#include "framework/core.h"
+#include "framework/AssetsManager.hpp"
+#include "framework/core.hpp"
 
 namespace ly
 {

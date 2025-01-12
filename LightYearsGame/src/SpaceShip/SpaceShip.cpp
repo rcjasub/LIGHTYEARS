@@ -1,6 +1,6 @@
-#include "SpaceShip/SpaceShip.h"
-#include "framework/MessUtility.h"
-#include "VFX/Explosion.h"
+#include "SpaceShip/SpaceShip.hpp"
+#include "framework/MathUtility.hpp"
+#include "VFX/Explosion.hpp"
 
 namespace ly {
 

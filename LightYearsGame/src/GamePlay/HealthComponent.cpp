@@ -1,5 +1,5 @@
-#include "HealthComponent.h"
-#include "framework/core.h"
+#include "HealthComponent.hpp"
+#include "framework/core.hpp"
 
 namespace ly
 {

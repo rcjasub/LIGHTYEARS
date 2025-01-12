@@ -1,5 +1,5 @@
-#include"EntryPoint.h"
-#include"framework/application.h"
+#include"EntryPoint.hpp"
+#include"framework/application.hpp"
 
 int main() 
 {

@@ -1,9 +1,9 @@
-#include "Player/PlayerSpaceShip.h"
+#include "Player/PlayerSpaceShip.hpp"
 #include <SFML/System.hpp>
-#include "framework/MessUtility.h"
-#include "Weapon/BulletShooter.h"
-#include "Weapon/ThreeWayShooter.h"
-#include "Weapon/FrontalWiper.h"
+#include "framework/MathUtility.hpp"
+#include "Weapon/BulletShooter.hpp"
+#include "Weapon/ThreeWayShooter.hpp"
+#include "Weapon/FrontalWiper.hpp"
 
 namespace ly
 {
