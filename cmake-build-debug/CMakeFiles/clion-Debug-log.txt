@@ -18,6 +18,15 @@ Call Stack (most recent call first):
   cmake-build-debug/_deps/sfml-src/src/SFML/Audio/CMakeLists.txt:70 (sfml_find_package)
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
--- Configuring done (2.0s)
--- Generating done (0.2s)
--- Build files have been written to: C:/lightyears_fix/cmake-build-debug
+-- Configuring done (1.3s)
+CMake Error at LightYearsGame/CMakeLists.txt:13 (add_executable):
+  Cannot find source file:
+
+    C:/lightyears_fix/LightYearsGame/src/Widgets/GamePlayHUD.hpp
+
+
+CMake Error at LightYearsGame/CMakeLists.txt:13 (add_executable):
+  No SOURCES given to target: LightYearsGame
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

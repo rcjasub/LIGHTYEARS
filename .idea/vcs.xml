@@ -4,6 +4,8 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Build_Windows_debug/_deps/box2d-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Build_Windows_debug/_deps/sfml-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/build/_deps/box2d-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/build/_deps/sfml-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/box2d-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/sfml-src" vcs="Git" />
   </component>

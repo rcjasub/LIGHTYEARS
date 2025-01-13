@@ -83,6 +83,8 @@ ${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFO.cpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFOStage.hpp
 ${CMAKE_CURRENT_SOURCE_DIR}/src/Enemy/UFOStage.cpp
 
+${CMAKE_CURRENT_SOURCE_DIR}/src/Widgets/GamePlayHUD.hpp
+${CMAKE_CURRENT_SOURCE_DIR}/src/Widgets/GamePlayHUD.cpp
 )
 
 target_include_directories(${LIGHT_YEARS_GAME_TARGET_NAME} PUBLIC

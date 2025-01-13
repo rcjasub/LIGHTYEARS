@@ -14,9 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//BOX2D
-BOX2D:BOOL=OFF
-
 //Build the Box2D documentation
 BOX2D_BUILD_DOCS:BOOL=OFF
 
@@ -184,7 +181,7 @@ CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 CMAKE_LINKER:FILEPATH=C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/mingw/bin/ld.exe
 
 //make program
-CMAKE_MAKE_PROGRAM:FILEPATH=C:/Program Files/JetBrains/CLion 2024.3.1.1/bin/ninja/win/x64/ninja.exe
+CMAKE_MAKE_PROGRAM:FILEPATH=C:/PROGRA~1/JETBRA~1/CLION2~1.1/bin/ninja/win/x64/ninja.exe
 
 //Flags used by the linker during the creation of modules during
 // all build types.
@@ -370,12 +367,6 @@ FREETYPE_LIBRARY:FILEPATH=C:/lightyears_fix/cmake-build-debug/_deps/sfml-src/ext
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=C:/Program Files/Git/cmd/git.exe
 
-//GLFW
-GLFW:BOOL=OFF
-
-//IMUGUI
-IMUGUI:BOOL=OFF
-
 //Value Computed by CMake
 LightYears_BINARY_DIR:STATIC=C:/lightyears_fix/cmake-build-debug/LightYearsGame
 
@@ -402,12 +393,6 @@ OPENGL_gl_LIBRARY:STRING=opengl32
 
 //GLU library for win32
 OPENGL_glu_LIBRARY:STRING=glu32
-
-//SDL2
-SDL2:BOOL=OFF
-
-//SFML
-SFML:BOOL=OFF
 
 //Value Computed by CMake
 SFML_BINARY_DIR:STATIC=C:/lightyears_fix/cmake-build-debug/_deps/sfml-build
