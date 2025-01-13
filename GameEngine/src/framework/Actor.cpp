@@ -23,7 +23,7 @@ namespace ly
 
 	Actor::~Actor()
 	{
-		
+
 	}
 
 	void Actor::BeginPlayInternal()
@@ -45,12 +45,12 @@ namespace ly
 
 	void Actor::BeganPlay()
 	{
-		
+
 	}
 
 	void Actor::Tick(float deltaTime)
 	{
-		
+
 	}
 
 	void Actor::SetTexture(const std::string& texturePack)
@@ -60,7 +60,7 @@ namespace ly
 		mTexture = assetsManager.LoadTexture(texturePack);
 		if (!mTexture) return;
 		mSprite.setTexture(*mTexture);
-		
+
 		int textureWidth = mTexture->getSize().x;
 		int textureHeight = mTexture->getSize().y;
 
@@ -74,14 +74,14 @@ namespace ly
 		{
 			return;
 		}
-		
+
 		Window.draw(mSprite);
 	}
 	void Actor::SetActorLocation(const sf::Vector2f& newLoc)
 	{
 		mSprite.setPosition(newLoc);
 		UpdatePhysicsTransform();
-		
+
 
 	}
 	float Actor::GetActorRotation() const
@@ -93,27 +93,27 @@ namespace ly
 	{
 		mSprite.setRotation(newRot);
 		UpdatePhysicsTransform();
-	} 
+	}
 	void Actor::addActorLocationOffset(const sf::Vector2f& offsetAmt)
 	{
 		SetActorLocation(GetActorLocation() + offsetAmt);
 	}
-	void Actor::addActorRotationOffset(float offsetAmt)     
+	void Actor::addActorRotationOffset(float offsetAmt)
 	{
 		setActorRotation(GetActorRotation() + offsetAmt);
 	}
-	sf::Vector2f Actor::GetActorLocation() const   
+	sf::Vector2f Actor::GetActorLocation() const
 	{
 		return mSprite.getPosition();
 	}
-	sf::Vector2f Actor::getActorForwardDirection() const 
+	sf::Vector2f Actor::getActorForwardDirection() const
 	{
 		return RotationVector(GetActorRotation());
 	}
 	sf::Vector2f Actor::getActorRightDirection() const
 	{
 		return RotationVector(GetActorRotation());
-	} 
+	}
 	sf::FloatRect Actor::GetActorGlobalBounds() const
 	{
 		return mSprite.getGlobalBounds();
@@ -139,7 +139,7 @@ namespace ly
 			return true;
 		}
 
-	    if (actorPos.x > windowWidth + width + allowance)
+		if (actorPos.x > windowWidth + width + allowance)
 		{
 			return false;
 		}
@@ -174,18 +174,18 @@ namespace ly
 
 	void Actor::OnActorBeginOverlap(Actor* other)
 	{
-		
+
 	}
 
 	void Actor::OnActorEndOverlap(Actor* other)
 	{
-		
+
 	}
 
 	void Actor::Destroy()
 	{
 		UnInitializePhysics();
-		// OnActorDestroy.BroadCast(this);
+		OnActorDestroy.BroadCast(this);
 		Object::Destroy();
 	}
 

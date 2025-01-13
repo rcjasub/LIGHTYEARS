@@ -15,7 +15,7 @@ namespace ly
 		: mWindow{ sf::VideoMode(windowWidth, windowHeight), title, style },
 		mTargetFrameRate{ 120.f },
 		mTickClock{},
-		currentWorld{ nullptr },
+		mCurrentWorld{ nullptr },
 	mCleanCycleClock{},
 		mCleanCycleInterval(2.f)
 
@@ -49,6 +49,11 @@ namespace ly
 				{
 					mWindow.close();
 				}
+
+				else
+				{
+					DispathEvent(windowEvent);
+				}
 			}
 
 			TickInternal(targetDeltaTime);
@@ -72,16 +77,27 @@ namespace ly
 		return mWindow.getSize();
 	}
 
+	bool Application::DispathEvent(const sf::Event& event)
+	{
+		if (mCurrentWorld)
+		{
+			return mCurrentWorld->DispathEvent(event);
+		}
+
+		return false;
+
+	}
+
 	void Application::TickInternal(float deltaTime)
 	{
 
 		Tick(deltaTime);
 
-		if (currentWorld)
+		if (mCurrentWorld)
 		{
-			currentWorld->TickInternal(deltaTime);
+			mCurrentWorld->TickInternal(deltaTime);
 		}
-		
+
 		TimerManager::Get().UpdateTimer(deltaTime);
 
 		PhysicsSystem::Get().Step(deltaTime);
@@ -91,32 +107,32 @@ namespace ly
 			mCleanCycleClock.restart();
 			AssetsManager::Get().CleanCycle();
 
-			if (currentWorld)
+			if (mCurrentWorld)
 			{
-				currentWorld->CleanCycle();
+				mCurrentWorld->CleanCycle();
 			}
 		}
 	}
-	
+
 	void Application::RenderInternal()
 	{
 		mWindow.clear();
 
 		Render();
 
-		mWindow.display(); 
+		mWindow.display();
 	}
 
 	void Application::Render()
 	{
-		if (currentWorld)
+		if (mCurrentWorld)
 		{
-			currentWorld->Render(mWindow);
+			mCurrentWorld->Render(mWindow);
 		}
 	}
 
 	void Application::Tick(float deltaTime)
 	{
-		
+
 	}
 }

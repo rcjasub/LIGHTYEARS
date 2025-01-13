@@ -3,6 +3,7 @@
 #include "framework/Actor.hpp"
 #include "framework/application.hpp"
 #include "GamePlay/GameStage.hpp"
+#include "Widgets/HUD.hpp"
 
 namespace ly
 {
@@ -15,7 +16,7 @@ namespace ly
 		mGameStage{},
 		mCurrentStage{mGameStage.end()}
 	{
-		
+
 	}
 
 	void World::BeginPlayInternal()
@@ -23,11 +24,11 @@ namespace ly
 		if (!mBeganPlay)
 		{
 			mBeganPlay = true;
-			
+
 			BeginPlay();
 			InitGameStages();
 			StartStages();
-			
+
 		}
 	}
 
@@ -49,13 +50,22 @@ namespace ly
 			iter->get()->TickInternal(deltaTime);
 			++iter;
 		}
-        
+
 		if (mCurrentStage != mGameStage.end())
 		{
 			mCurrentStage->get()->TickStage(deltaTime);
 		}
 
 		Tick(deltaTime);
+
+		if (mHUD)
+		{
+			if (!mHUD->HasInit());
+			mHUD->NativeInit(mOwningApp->GetWindow());
+			mHUD->Tick(deltaTime);
+
+		}
+
 	}
 
 	void World::Render(sf::RenderWindow& window)
@@ -64,6 +74,8 @@ namespace ly
 		{
 			actor->Render(window);
 		}
+
+		RenderHUD(window);
 	}
 
 	World::~World()
@@ -90,7 +102,6 @@ namespace ly
 			}
 		}
 
-		
 	}
 
 	void World::AddStage(const shared<GameStage>& newStage)
@@ -98,19 +109,37 @@ namespace ly
 		mGameStage.push_back(newStage);
 	}
 
+	bool World::DispathEvent(const sf::Event& event)
+	{
+		if (mHUD)
+		{
+			return mHUD->HandleEvent(event);
+		}
+
+		return false;
+	}
+
 	void World::BeginPlay()
 	{
-		
+
 	}
 
 	void World::Tick(float deltaTime)
 	{
-		
+
+	}
+
+	void World::RenderHUD(sf::RenderWindow& window)
+	{
+		if (mHUD)
+		{
+			mHUD->Draw(window);
+		}
 	}
 
 	void World::InitGameStages()
 	{
-		
+
 	}
 
 	void World::AllGameStageFinish()
@@ -121,7 +150,7 @@ namespace ly
 	void World::NextGameStage()
 	{
 		++mCurrentStage;
-		
+
 		mCurrentStage = mGameStage.erase(mCurrentStage);
 
 		if (mCurrentStage != mGameStage.end())
@@ -144,7 +173,7 @@ namespace ly
 			mCurrentStage->get()->StartStage();
 			mCurrentStage->get()->onStageFinish.BindAction(GetWeakRef(), &World::NextGameStage);
 		}
-		
+
 	}
 
 }
